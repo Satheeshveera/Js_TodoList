@@ -1,0 +1,65 @@
+body{
+   background: rgb(218,120,8);
+    background: linear-gradient(90deg, rgba(218,120,8,1) 0%, rgba(247,70,255,1) 100%);
+    font-style: italic;
+}
+
+.banner{
+    padding: 20px;
+   
+    margin-top: 30px;
+    border-radius: 8px;
+ 
+    background-image: url("../images/bg.png");
+    max-height: 80vh;
+    overflow: hidden;
+    width: fit-content;
+}
+.completed{
+    text-decoration: line-through;
+    color: gray !important;
+}
+input{
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid  orange   !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    color: black !important;
+}
+ 
+button{
+     background: rgb(218,120,8);
+    background: linear-gradient(90deg, rgba(218,120,8,1) 0%, rgba(247,70,255,1) 100%); 
+    border: 2px solid orange;
+    border-radius: 50% !important;
+    padding: 0 10px !important;
+}
+.containar{
+    overflow: hidden;
+}
+ 
+#contain{
+    max-height: 50vh;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
