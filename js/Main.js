@@ -34,9 +34,7 @@ options.style.display = "none";
 $(document).ready(function(){
    
     listTodo();
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-      })
+    
  });
  
 function listTodo(){
@@ -55,7 +53,7 @@ function listTodo(){
         '<button title="Delete" data-toggle="tooltip" id="del'+element.id+'" class=" ml-1   addBtn" onclick="deleteTodo(\'' + element.id + '\',\'' + element.type + '\')"><i class="zmdi zmdi-delete"></i></button>'+
         '</div></div>')  
     });
-  
+    
 }
 function editchange(id){
         $("#edit"+id).prop("disabled", false);  
