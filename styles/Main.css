@@ -28,13 +28,21 @@ input{
     box-shadow: none !important;
     color: black !important;
 }
+h3{
+  border-bottom: 2px solid violet;
+  padding-bottom: 0.5rem;
  
+}
 button{
      background: rgb(218,120,8);
     background: linear-gradient(90deg, rgba(218,120,8,1) 0%, rgba(247,70,255,1) 100%); 
     border: 2px solid orange;
     border-radius: 50% !important;
     padding: 0 10px !important;
+}
+button:hover{
+  background: rgb(247,70,255);
+  background: linear-gradient(150deg, rgba(247,70,255,1)  0%, rgba(218,120,8,1) 100%);
 }
 .containar{
     overflow: hidden;
