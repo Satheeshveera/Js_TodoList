@@ -1,17 +1,21 @@
 body{
-   background: rgb(218,120,8);
-    background: linear-gradient(90deg, rgba(218,120,8,1) 0%, rgba(247,70,255,1) 100%);
-    font-style: italic;
+  background-image: url("../images/bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+   /* background: rgb(218,120,8); */
+    /* background: linear-gradient(90deg, rgba(218,120,8,1) 0%, rgba(247,70,255,1) 100%); */
+  font-style: italic;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .banner{
     padding: 20px;
-   
     margin-top: 30px;
     border-radius: 8px;
- 
     background-image: url("../images/bg.png");
-    max-height: 80vh;
+    /* max-height: 80vh; */
     overflow: hidden;
     width: fit-content;
 }
@@ -19,7 +23,7 @@ body{
     text-decoration: line-through;
     color: gray !important;
 }
-input{
+input, select{
     background: transparent !important;
     border: none !important;
     border-bottom: 2px solid  orange   !important;
@@ -29,7 +33,7 @@ input{
     color: black !important;
 }
 h3{
-  border-bottom: 2px solid violet;
+  border-bottom: 4px dotted white;
   padding-bottom: 0.5rem;
  
 }
@@ -49,7 +53,7 @@ button:hover{
 }
  
 #contain{
-    max-height: 50vh;
+    max-height: 54vh;
     overflow: auto;
 }
 
