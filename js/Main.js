@@ -20,7 +20,15 @@ let alarmTimer;
 options.style.display = "none";
 $(document).ready(function () {
 
+ if(todoArray.length>0){
   listTodo(todoArray);
+ }else{
+  $("#contain").html(`<div class="card openCard">
+  <div class="card-body">
+      Let's Start the TODO...
+  </div>
+</div>`)
+ }
 
 });
 
