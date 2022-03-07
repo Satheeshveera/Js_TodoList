@@ -1,17 +1,4 @@
-var todoArray = [
-  // {
-  //   id: 1,
-  //   text: "Workouts",
-  //   updated_ts: "Feb 28th 2022, 9:07:51 am",
-  //   type: ""
-  // },
-  // {
-  //   id: 2,
-  //   text: "Maths Test",
-  //   updated_ts: "Feb 28th 2022, 9:07:51 am",
-  //   type: ""
-  // }
-]
+var todoArray = JSON.parse(localStorage.getItem("todoArray"));
 //declare variables we'll need
 const alarmButton = document.querySelector(".btn-alarm");
 const snoozeButton = document.querySelector(".btn-snooze");
@@ -38,6 +25,7 @@ $(document).ready(function () {
 });
 
 function listTodo(obj) {
+  
   $("#contain").html("");
 
   obj.forEach((element, index, array) => {
@@ -97,7 +85,8 @@ function finishTodo(id, type) {
     $(ids).html("<i class='zmdi zmdi-close'></i>");
     Object.assign(todoArray.find(b => b.id == id), { type: "completed", updated_ts: moment().format('MMM Do YYYY, h:mm:ss a') });
   }
-
+  localStorage.clear();
+  localStorage.setItem("todoArray", JSON.stringify(todoArray));
   listTodo(todoArray);
 }
 
@@ -105,13 +94,16 @@ function editTodo(id) {
   $(".editBtn").prop("disabled", true);
   var contVal = $("#uid" + id).val();
   Object.assign(todoArray.find(b => b.id == id), { text: contVal, updated_ts: moment().format('MMM Do YYYY, h:mm:ss a') });
+  localStorage.clear();
+  localStorage.setItem("todoArray", JSON.stringify(todoArray));
   listTodo(todoArray);
 }
 
 function deleteTodo(id) {
   todoArray = todoArray.filter(obj => obj.id != id);
+  localStorage.clear();
+  localStorage.setItem("todoArray", JSON.stringify(todoArray));
   listTodo(todoArray);
-
 }
 
 function addTodo() {
@@ -124,12 +116,14 @@ function addTodo() {
       updated_ts: moment().format('MMM Do YYYY, h:mm:ss a'),
       type: ""
     });
+    localStorage.setItem("todoArray", JSON.stringify(todoArray));
     $("#todoContent").val("");
     $("#addbutton").prop("disabled", true);
     listTodo(todoArray);
   } else {
     alert("Todo can't be Empty")
   }
+  
 }
 
 
