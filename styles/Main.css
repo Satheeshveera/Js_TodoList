@@ -56,7 +56,11 @@ button:hover{
     max-height: 54vh;
     overflow: auto;
 }
-
+.openCard{
+    background: transparent !important;
+    border: 1px dotted white !important;
+    color: white !important;
+}
 ::-webkit-scrollbar {
     width: 4px;
   }

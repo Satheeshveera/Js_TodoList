@@ -1,16 +1,16 @@
 var todoArray = [
-  {
-    id: 1,
-    text: "Workouts",
-    updated_ts: "Feb 28th 2022, 9:07:51 am",
-    type: ""
-  },
-  {
-    id: 2,
-    text: "Maths Test",
-    updated_ts: "Feb 28th 2022, 9:07:51 am",
-    type: ""
-  }
+  // {
+  //   id: 1,
+  //   text: "Workouts",
+  //   updated_ts: "Feb 28th 2022, 9:07:51 am",
+  //   type: ""
+  // },
+  // {
+  //   id: 2,
+  //   text: "Maths Test",
+  //   updated_ts: "Feb 28th 2022, 9:07:51 am",
+  //   type: ""
+  // }
 ]
 //declare variables we'll need
 const alarmButton = document.querySelector(".btn-alarm");
@@ -39,6 +39,7 @@ $(document).ready(function () {
 
 function listTodo(obj) {
   $("#contain").html("");
+
   obj.forEach((element, index, array) => {
     $("#contain").append('<div class="row d-flex mt-3 w-100 pl-3 pr-3 no-gutters">' +
       '<div class="col-7">' +
@@ -53,20 +54,27 @@ function listTodo(obj) {
       '<button title="Delete" data-toggle="tooltip" id="del' + element.id + '" class=" ml-1   addBtn" onclick="deleteTodo(\'' + element.id + '\',\'' + element.type + '\')"><i class="zmdi zmdi-delete"></i></button>' +
       '</div></div>')
   });
-
+  if (obj.length == 0) {
+    $("#contain").html(`<div class="card openCard">
+      <div class="card-body">
+          Let's Start the TODO...
+      </div>
+    </div>`)
+  }
 }
-function filterChange(val){
-  if(val.value === "completed"){
-    var filterItem =  todoArray.filter(function(item) {
-      return item.type ==val.value;
+
+function filterChange(val) {
+  if (val.value === "completed") {
+    var filterItem = todoArray.filter(function (item) {
+      return item.type == val.value;
     });
     listTodo(filterItem);
-  }else if(val.value ==="uncompleted"){
-    var filterItem =  todoArray.filter(function(item) {
-      return item.type =="";
+  } else if (val.value === "uncompleted") {
+    var filterItem = todoArray.filter(function (item) {
+      return item.type == "";
     });
     listTodo(filterItem);
-  }else{
+  } else {
     listTodo(todoArray);
   }
 }
@@ -103,14 +111,15 @@ function editTodo(id) {
 function deleteTodo(id) {
   todoArray = todoArray.filter(obj => obj.id != id);
   listTodo(todoArray);
+
 }
 
 function addTodo() {
   var contVal = $("#todoContent").val();
-  
+
   if (contVal.replace(/^\s+|\s+$/g, "").length != 0) {
     todoArray.push({
-      id: Math.random() * 100,
+      id: (Math.random() * 10000).toFixed(0),
       text: contVal,
       updated_ts: moment().format('MMM Do YYYY, h:mm:ss a'),
       type: ""

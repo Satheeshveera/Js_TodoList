@@ -21,16 +21,17 @@
 
             <div class="wrapper row d-flex justify-content-center mt-3">
                 <!-- <label>Set Alarm</label> -->
-                <input type="time" name="" class="alarm-time ml-2" />
-                <button title="Set Alarm" data-toggle="tooltip" class="btn-alarm ml-2"><i
+                <input type="time" name="" class="alarm-time ml-2 mt-1" />
+               
+                <span class="options d-flex mt-2">
+                    <button title="Set Alarm" data-toggle="tooltip" class="btn-alarm ml-2 "><i
                         class="zmdi zmdi-alarm-check"></i></button>
-                <span class="options d-flex">
                     <button title="Snooze 5s" data-toggle="tooltip" class="btn-snooze ml-2"><i
                             class="zmdi zmdi-alarm-snooze"></i></button>
                     <button title="Stop" data-toggle="tooltip" class="btn-stopalarm ml-2"><i
                             class="zmdi zmdi-alarm-off"></i></button>
                 </span>
-                <select name="type" id="checkType" class="ml-2" onchange="filterChange(this)">
+                <select name="type" id="checkType" class="ml-2 mt-1" onchange="filterChange(this)">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="uncompleted">Uncomplete</option>
@@ -45,7 +46,7 @@
                     disabled><i class="zmdi zmdi-plus"></i></button>
             </div>
             <div id="contain" class="mt-3">
-
+                
             </div>
         </div>
     </div>
