@@ -36,26 +36,28 @@ function listTodo(obj) {
   
   $("#contain").html("");
 
-  obj.forEach((element, index, array) => {
-    $("#contain").append('<div class="row d-flex mt-3 w-100 pl-3 pr-3 no-gutters">' +
-      '<div class="col-7">' +
-      '<input type="text" id="uid' + element.id + '" class="appendinput form-control mb-0 ' + element.type + '" value=' + (element.text).replace(" ", "_") + ' oninput="editchange(\'' + element.id + '\')">' +
-      '<small >' + element.updated_ts + '</small>' +
-      '</div>' +
-      '<div class="col-5 m-auto">' +
-      '<button title="Finish" data-toggle="tooltip" id="fsh' + element.id + '" class=" ml-1 addBtn" onclick="finishTodo(\'' + element.id + '\',\'' + element.type + '\')"><i class="zmdi zmdi-check"></i>' +
-      '</button>' +
-      '<button title="Edit" data-toggle="tooltip" id="edit' + element.id + '" class=" ml-1 editBtn" disabled onclick="editTodo(\'' + element.id + '\',\'' + element.type + '\')"><i class="zmdi zmdi-edit"></i>' +
-      '</button>' +
-      '<button title="Delete" data-toggle="tooltip" id="del' + element.id + '" class=" ml-1   addBtn" onclick="deleteTodo(\'' + element.id + '\',\'' + element.type + '\')"><i class="zmdi zmdi-delete"></i></button>' +
-      '</div></div>')
-  });
+  
   if (obj.length == 0) {
     $("#contain").html(`<div class="card openCard">
       <div class="card-body">
           Let's Start the TODO...
       </div>
     </div>`)
+  }else{
+    obj.forEach((element, index, array) => {
+      $("#contain").append('<div class="row d-flex mt-3 w-100 pl-3 pr-3 no-gutters">' +
+        '<div class="col-7">' +
+        '<input type="text" id="uid' + element.id + '" class="appendinput form-control mb-0 ' + element.type + '" value=' + (element.text).replace(" ", "_") + ' oninput="editchange(\'' + element.id + '\')">' +
+        '<small >' + element.updated_ts + '</small>' +
+        '</div>' +
+        '<div class="col-5 m-auto">' +
+        '<button title="Finish" data-toggle="tooltip" id="fsh' + element.id + '" class=" ml-1 addBtn" onclick="finishTodo(\'' + element.id + '\',\'' + element.type + '\')"><i class="zmdi zmdi-check"></i>' +
+        '</button>' +
+        '<button title="Edit" data-toggle="tooltip" id="edit' + element.id + '" class=" ml-1 editBtn" disabled onclick="editTodo(\'' + element.id + '\',\'' + element.type + '\')"><i class="zmdi zmdi-edit"></i>' +
+        '</button>' +
+        '<button title="Delete" data-toggle="tooltip" id="del' + element.id + '" class=" ml-1   addBtn" onclick="deleteTodo(\'' + element.id + '\',\'' + element.type + '\')"><i class="zmdi zmdi-delete"></i></button>' +
+        '</div></div>')
+    });
   }
 }
 
