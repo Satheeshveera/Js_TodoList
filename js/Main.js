@@ -1,4 +1,4 @@
-var todoArray = JSON.parse(localStorage.getItem("todoArray"));
+var todoArray = "";
 //declare variables we'll need
 const alarmButton = document.querySelector(".btn-alarm");
 const snoozeButton = document.querySelector(".btn-snooze");
@@ -19,7 +19,12 @@ let alarmTimer;
 // initially hides snooze and stop alarm options until they're useful
 options.style.display = "none";
 $(document).ready(function () {
-
+  if(JSON.parse(localStorage.getItem("todoArray"))){
+    todoArray = JSON.parse(localStorage.getItem("todoArray"))
+  }else{
+    todoArray = []
+  }
+  
  if(todoArray.length>0){
   listTodo(todoArray);
  }else{
